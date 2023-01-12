@@ -208,4 +208,21 @@ public class MainActivity extends BaseActivity {
         player.prepare();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(player!=null){
+            if(player.isPlaying()){
+                player.pause();
+            }
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(player!=null){
+            player.play();
+        }
+    }
 }
